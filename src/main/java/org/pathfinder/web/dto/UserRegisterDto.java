@@ -1,12 +1,23 @@
 package org.pathfinder.web.dto;
 
+import jakarta.validation.constraints.*;
+
 public class UserRegisterDto {
 
+    @NotBlank
+    @NotNull
     private String username;
+    @NotBlank
+    @Size(min = 5,max = 20)
     private String fullName;
+    @Email
     private String email;
+    @Min(0)
+    @Max(90)
     private Integer age;
+    @Min(5)
     private String password;
+
     private String confirmPassword;
 
 
